@@ -1,0 +1,2 @@
+CREATE TABLE `bdd_app_aprun`.`evenements` ( `id` INT NOT NULL AUTO_INCREMENT , `promotion_id` int NOT NULL , `dateDebut` DATETIME NOT NULL , `dateFin` DATETIME NULL DEFAULT NULL , PRIMARY KEY (`id`)) ENGINE = MyISAM;;
+ALTER TABLE `evenements` ADD CONSTRAINT fk_event_promo FOREIGN KEY (`promotion_id`) REFERENCES promotion(`id_promo`);

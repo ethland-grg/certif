@@ -1,0 +1,144 @@
+#connexion {
+  height: 90vh;
+  background: url("../ressources/img/bg_home.jpg");
+}
+
+header {
+  background-color: #87ceeb;
+}
+
+#formulaire_connexion {
+  width: 20%;
+}
+
+#liste_apprenant_tuteur a {
+  text-decoration: none;
+  color: black;
+}
+
+#btn_inscription,
+#btn_ajout_promotion {
+  width: 25%;
+}
+
+.fc .fc-daygrid-day.fc-day-today
+{
+  background-color: lightblue!important;
+}
+
+.bienvenue {
+  background: #FF8C00;
+  color: white;
+  border-radius: 3%;
+}
+
+/*----------- NAVBAR -------------------*/
+.navbar-brand {
+ margin-right: 0px;
+ margin-left: 15px;
+}
+
+/*---------- messagerie admin ----------*/
+td p {
+  height: 20px;
+  overflow: hidden;
+}
+
+
+
+/* -----------styles Landry ---------*/
+#couleurFond {
+  background-color: #87ceeb;
+  height: 7vh;
+}
+#titre {
+  background-color: black;
+  height: 35vh;
+  color: white;
+}
+
+
+#corp {
+  height: 48vh;
+}
+
+.dimention {
+  width: 15%;
+}
+
+/* MEDIA QUERIES */
+@media all and (max-width: 870px) {
+  #formulaire_connexion {
+    width: 70%;
+  }
+
+  #btn_inscription,
+  #btn_ajout_promotion {
+    width: 50%;
+  }
+
+  .titre{
+    font-size: large;
+  }
+
+  .logo{
+    display: flex!important;
+    justify-content: center!important;
+  }
+
+  .bienvenue {
+    background-color: transparent;
+    color: #FF8C00;
+    width: 0px!important;
+    display: flex;
+    justify-content: center;
+  }
+
+  #connexion {
+    justify-content: unset!important;
+    padding-top: 20%;
+  }
+  .login {
+    border: none!important;
+  }
+  
+}
+
+@media all and (max-width:380px){
+    
+    #couleurFond {
+        
+        height: 9vh;
+      }
+
+    #connexion {
+      justify-content: unset!important;
+      padding-top: 30%;
+    }
+    
+    .bienvenue {
+      background-color: transparent;
+      color: orange;
+      width: 0px!important;
+      display: flex;
+      justify-content: center;
+    }
+
+    .login {
+      border: none!important;
+      
+    }
+
+   /*   .titre {
+        font-size: large;
+    }
+    #corp {
+        height: 52vh;
+      }
+      */
+}
+
+
+
+
+/* ---------fin style Landry --------*/
