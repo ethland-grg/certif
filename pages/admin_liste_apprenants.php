@@ -29,9 +29,9 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <form action="../includes/login.php" method="POST">
+                <form action="home.php" method="POST">
                 <button class="btn btn-light btn-large rounded-pill" name="deconnexion">Se déconnecter 
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="home.php">
                 <img src="../ressources/icones/logout.png" width="25" height="25" class="" alt="">
                     </a>
                 </button>

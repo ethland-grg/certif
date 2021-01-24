@@ -30,7 +30,7 @@
     if (isset($_POST['deconnexion'])) {  //Lorsque l'on se déconnecte
         $_SESSION['user'] = ''; //On met le user à rien
         session_destroy();
-        header('location: ../index.php');    //On redirige vers la page d'accueil
+        header('location: home.php');    //On redirige vers la page d'accueil
         exit();
     }
     // if (isset($_POST['connexion'])) 

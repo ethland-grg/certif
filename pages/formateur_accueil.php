@@ -31,26 +31,51 @@
                         </li>
                     </ul>
                 </div>
+                <form action="home.php" method="POST">
+                    <button class="btn btn-light btn-large rounded-pill" name="deconnexion">Se déconnecter 
+                        <a class="navbar-brand" href="home.php">
+                    <img src="../ressources/icones/logout.png" width="25" height="25" class="" alt="">
+                        </a>
+                    </button>
+                </form>
             </div>
         </nav>
     </header>
     
     <section class="container-fluid d-flex flex-column justify-content-center align-items-center p-5">
-    <h1>Bienvenue</h1>
-        <div id="choix_promo_formateur">
-            <form>
-
-                <div class="d-flex flex-column p-5  bg-light" style="border:2px solid black">
-                <label for="choix_promo_formateur">Veuillez choisir une promotion :</label>
-                    <select class="form-control my-5" name="choix_promo_formateur">
-                        <option>2020-2021 - Developpeur Web</option>
-                    </select>
-                    <input type="submit" class="btn btn-primary w-50 align-self-end" value="Valider" name="valider_promo_formateur">
+        
+            <div class=" container row d-flex flex-column text-center justify-content-center">
+                <div class="col">
+                    <h4> Bonjour "Kotofetsy " formateur à recup lors de sa connexion</h4>
                 </div>
+                <div class="col pb-5">
+                <h1>Bienvenue à votre espace</h1>
+                </div>
+            </div>
+        
+        
+            <div id="choix_promo_formateur">
+                <form type="#" method="POST" action="admin_liste_apprenants.php">
 
-            </form>
+                    <div class="d-flex flex-column p-5  bg-light" id="choixPromo"> 
+                        <label for="choix_promo_formateur">Veuillez choisir une promotion :</label>
+                        <select class="form-control my-5" name="choix_promo_formateur">
+                            <!-- Récupérer les promos -->
+                            <?php include_once '../includes/dbh.inc.php'; 
+                                $sql = "SELECT * FROM promotion"; 
+                                $result = $conn->query($sql); 
+                                if ($result->num_rows > 0) {
+                            // Afficher le résultat de chaque lignes
+                            while($row = $result->fetch_assoc()){
+                                echo '<option value="'.$row['id_promo'].'">'.$row['nom'].' '.$row['promotion'].' </option>';
+                            }} ?>
+                        </select>
+                        <input type="submit" class="btn btn-primary w-50 align-self-end" value="Valider" name="valider_promo_formateur">
+                    </div>
 
-        </div>
+                </form>
+
+            </div>
     </section>
 
 </body>
