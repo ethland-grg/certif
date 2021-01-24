@@ -44,14 +44,16 @@
         <div id="formulaire_inscription" style="width:50%">
             <form class="d-flex flex-column" method="POST" action="./formulaire_inscription.php">
 
+                <input type="hidden" name="role" value="4"/>
+
                 <label class="mb-2" for="nom">Nom :</label>
                 <input class=" form-control mb-4" type="text" name="nom" id="nom">
 
                 <label class="mb-2" for="prenom">Prenom :</label>
                 <input class=" form-control mb-4" type="text" name="prenom" id="prenom">
 
-                <label class="mb-2" for="role">Statut :</label>
-                <select class="form-control mb-4" name="role" id="role" onchange="check();">
+                <label class="mb-2" for="statut_tuteur">Statut :</label>
+                <select class="form-control mb-4" name="statut_tuteur" id="statut_tuteur" onchange="check();">
                     <option value='1'>Extérieur</option>
                     <option value='2'>Interieur</option>
                 </select>

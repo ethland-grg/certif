@@ -104,11 +104,7 @@
                 <label class="mb-2" for="mdp">Mot de passe :</label>
                 <input class=" form-control mb-4" type="password" name="mdp" id="mdp">
 
-                <label class="mb-2" for="statut_tuteur">Tuteur :</label>
-                <select class="form-control mb-4" name="statut_tuteur" id="statut_tuteur">
-                    <option value='1'>Oui</option>
-                    <option value='0'>Non</option>
-                </select>
+                
                 <input type="submit" class="btn btn-secondary align-self-end" value="S'inscrire" name="btn_inscription"
                     id="btn_inscription">
 

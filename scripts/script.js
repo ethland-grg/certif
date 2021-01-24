@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   //utlisateur == "formateur" : il e reste une condition ici pour limiter que seul les formateur peut éditer
  // var role_id = role_id,
-  if(true){
+  if(utilisateurConnecte && utilisateurConnecte.role_id == 3){
     calendarOptions.dateClick = function(info) {//Qunad on click sur une date du calendrier
       $('#newEvent').modal('show');//On affiche la fenetre de sasi
       $('#eventDate').text(`Le ${info.date.getUTCDate()}-${info.date.getUTCMonth() + 1}-${info.date.getUTCFullYear()} ${info.date.getUTCHours()}:${info.date.getUTCMinutes()}:${info.date.getUTCSeconds()}`); //on affiche la date choisi

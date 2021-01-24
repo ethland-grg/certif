@@ -1,3 +1,46 @@
+
+<?php 
+    include_once '../includes/dbh.inc.php'; //accéder a la base de donnée
+    session_start();
+    if(isset($_SESSION['utilisateur']) && $_SESSION['utilisateur'] != null)
+        header("Location: ../pages/admin_accueil.php");
+    if (isset($_POST['connexion']))     //Pour gérer la connexion en mode admin
+    {
+        // if ($_POST['email'] === "admin" && $_POST['mdp'] === "admin123") {
+        //     $_SESSION['admin'] = true;     //On est connecté en mode admin, les vues seront modifiées
+        //     header("Location: ../pages/admin_accueil.php");
+
+        $sql = "SELECT * FROM utilisateur WHERE email = '".$_POST['email']."' and mdp = '".$_POST['mdp']."';" ;
+        $result = $conn->query($sql);
+        $utilisateur = $result->fetch_assoc();
+        $_SESSION['utilisateur'] = $utilisateur;
+        if($utilisateur == null){
+           echo '<div class=" container mt-5 text-center alert alert-danger">Mot de passe ou identifiant erroné</div>';
+        }else if($utilisateur["role_id"] == 3){//si admin
+            header("Location: ../pages/admin_accueil.php");
+        }else if($utilisateur["role_id"] == 4){
+            header("Location: ../pages/admin_accueil.php");
+        }else if($utilisateur["role_id"] == 2){
+            header("Location: ../pages/admin_accueil.php");
+        }else if($utilisateur["role_id"] == 1){
+            header("Location: ../pages/admin_accueil.php");
+        }
+    }
+    
+    if (isset($_POST['deconnexion'])) {  //Lorsque l'on se déconnecte
+        $_SESSION['user'] = ''; //On met le user à rien
+        session_destroy();
+        header('location: ../index.php');    //On redirige vers la page d'accueil
+        exit();
+    }
+    // if (isset($_POST['connexion'])) 
+    
+    // if(empty($_POST['email']) || empty($_POST['mdp']))
+    // {
+    //     echo 'champ requis vide';
+    // }
+    ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -10,7 +53,7 @@
 
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-    <title>APRUN Carnet de bord</title>
+    <title>connexion</title>
 </head>
 
     <body>
@@ -26,15 +69,18 @@
         </header>
 
         <section class="container-fluid d-flex flex-column justify-content-center align-items-center" id="connexion">
-            <h1 class="bienvenue text-center" style="width:20%">Bienvenue</h1>
+            <h1 class="bienvenue text-center mt-2" style="width:50%">Bienvenue</h1>
             <div  id="formulaire_connexion">
-                <form method="POST" action="../includes/login.php">
+                <form method="POST" action="./home.php">
 
-                    <div class="d-flex flex-column p-2 align-items-end login" style="border:2px solid black">
-                        <input class="my-2 form-control" type="text" name="email" id="mail_utilisateur" placeholder="Adresse email">
-                        <input class="my-2 form-control" type="password" name="mdp" id="mdp_utilisateur" placeholder="Mot de passe">
-                        <input type="submit" class="btn btn-primary w-50" value="Se connecter" name="connexion">
+                    <div class="d-flex flex-column p-2 "  > 
+                        <label for="">votre adresse mail *</label>
+                        <input class="my-2 form-control align-items-end " type="text" name="email" id="mail_utilisateur" placeholder="Adresse email">
+                        <label for="">votre mot de passe *</label>
+                        <input class="my-2 form-control align-items-end " type="password" name="mdp" id="mdp_utilisateur" placeholder="Mot de passe">
+                        <input type="submit" class="btn btn-primary w-60 align-items-center" value="Se connecter" name="connexion">
                     </div>
+    
                 </form>
             </div>
         </section>

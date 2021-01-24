@@ -41,13 +41,15 @@
   // je dois mettre la condition ici pour les utilisateur
   //  $result = $conn->query($sql);
  
-   // session_start();
+   session_start();
     //$sql = "SELECT * FROM utilisateur WHERE id_user = '".$_SESSION['user']['id']."';" ;
     //Si $_SESSION['user'] ne contient que l'id de l'utilisateur faire le select suivant
    //  $sql = "SELECT * FROM utilisateur WHERE id_user = '".$_SESSION['user']."';" ;
     
     // $utilisateurConnecte = $result->fetch_assoc();
-   // $utilisateurConnecte = $_SESSION['user'];
+
+
+   $utilisateurConnecte = $_SESSION['utilisateur'];
     $conn->close();
 ?>
 
@@ -69,7 +71,7 @@
         var evenements = <?php echo json_encode($evenements); ?>;//on envoie dans javaScript les données récupérer depuis la base de données
         var promotions = <?php echo json_encode($promotions); ?>;
       //  var utilisateurConnecte = <?php// echo json_encode($_SESSION['user']); ?>; à revoir aussi quand la connexion soit re tablie
-      //  var utilisateurConnecte = // echo json_encode($utilisateurConnecte); ?>; // à mettre apres la connecxion soit retablie
+      var utilisateurConnecte = <?php echo json_encode($utilisateurConnecte); ?>; // à mettre apres la connecxion soit retablie
     </script>
     <script src="../scripts/script.js"></script>
     <title>Emploi du temps</title>
@@ -134,6 +136,7 @@
 
 <script>
     //pour chaques données de promo de la base on crée une option pour le champs select
+
     promotions.forEach(promo =>
         $('#promos').append(`<option value="${promo.id}">${promo.nom}</option>`)); 
 </script>

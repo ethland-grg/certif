@@ -1,16 +1,17 @@
-#connexion {
+/*#connexion {
   height: 90vh;
   background: url("../ressources/img/bg_home.jpg");
 }
-
+*/
 header {
   background-color: #87ceeb;
 }
 
-#formulaire_connexion {
-  width: 20%;
+/*#formulaire_connexion {
+  width: 50%;
+  border: black 2px;
 }
-
+*/
 #liste_apprenant_tuteur a {
   text-decoration: none;
   color: black;
@@ -21,15 +22,16 @@ header {
   width: 25%;
 }
 
-.fc .fc-daygrid-day.fc-day-today
+/*.fc .fc-daygrid-day.fc-day-today
 {
   background-color: lightblue!important;
-}
+}*/
 
 .bienvenue {
   background: #FF8C00;
   color: white;
-  border-radius: 3%;
+  border-radius: 10px;
+  width: 50%;
 }
 
 /*----------- NAVBAR -------------------*/
@@ -64,6 +66,21 @@ td p {
 
 .dimention {
   width: 15%;
+}
+#login{
+  padding-top: 1px;
+}
+
+#connexion {
+  /*justify-content: unset!important;
+  padding-top: 20%; */
+  border: 0.6px solid rgb(11, 11, 82) ;
+  background-color:  #87ceeb;
+  width: 30em;
+  padding-top: 1px !important;
+  border-radius: 10px;
+  margin-top: 100px;
+  box-shadow: 2px 5px 50px black ;
 }
 
 /* MEDIA QUERIES */
@@ -104,6 +121,8 @@ td p {
   
 }
 
+
+
 @media all and (max-width:380px){
     
     #couleurFond {
@@ -124,10 +143,7 @@ td p {
       justify-content: center;
     }
 
-    .login {
-      border: none!important;
-      
-    }
+    
 
    /*   .titre {
         font-size: large;
