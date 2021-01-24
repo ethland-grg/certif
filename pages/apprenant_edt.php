@@ -102,7 +102,7 @@
 
     <section class="container-fluid h-100 text-center mt-5" id="edt_apprenant">
 
-        <h1>Bonjour</h1>
+        <h1>Bonjour "fongitike" à reglena ko ty</h1>
 
         <h2>Emploi du temps</h2>
 

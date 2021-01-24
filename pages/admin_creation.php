@@ -59,7 +59,7 @@
                         </a>
                     </div>
                     <div class="col">
-                        <p>Créer un compte apprenant</p>
+                        <p>Créer un compte apprenant ou formateur</p>
                     </div>
             
                 </div>
@@ -69,12 +69,12 @@
             <div class="col-lg-4  d-flex justify-content-around">
                 <div class="row d-flex flex-column text-center">
                     <div class=" col" >
-                        <a href="formulaire_inscription.php">
+                        <a href="inscriptionTuteur.php">
                             <img src="../ressources/icones/icone3.png" alt="" class="dimention" >
                         </a>
                     </div>
                     <div class="col">
-                        <p>Créer un compte formateur</p>
+                        <p>Créer un compte tuteur</p>
                     </div>
             
                 </div>
