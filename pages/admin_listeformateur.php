@@ -71,45 +71,43 @@
                 <?php 
                     include_once '../includes/dbh.inc.php'; //accéder a la base de donnée
                    
-                    $id = $_SESSION['id_promo'];
-                    $promo = "SELECT * FROM utilisateur_promotion WHERE id_promo= '$id';" ;
-                    $resultat = $conn->query($promo);
-                    while ($donnee = $resultat->fetch_assoc()){
-                    $user_id = $donnee['id_user'];
-                    
-                    $sql = "SELECT * FROM utilisateur WHERE id_user = '$user_id' AND role_id ='1';" ; //selectionner la base de donnée UTILISATEUR
-                    $result = $conn->query($sql); 
-                    if ($result->num_rows > 0) {
-                        // Afficher le résultat de chaque lignes
-                        $row = $result->fetch_assoc();
-                            if($row['tuteur'] == 1) { // convertir les données booléens tuteur en OUI ou NON 
+                   
+                    $formateurs = "SELECT * FROM utilisateur WHERE role_id = 1;" ; // selection ce qu'on veut recuperer dans BDD
+                    $resultat = $conn->query($formateurs);
+                   
+                    if ($resultat->num_rows > 0) {
+                        // Afficher les résultats de chaque lignes
+                        while ($formateur = $resultat->fetch_assoc()){;
+                            if( "role_id" != 2 && "statut_tuteur " > 0) { // condition si tuteur  OUI ou NON 
                                 $tuteur = 'oui';
                             }else{
                                 $tuteur = 'non';
                             }
+                   
                                 //afficher les valeurs dans le tableau
-                        echo    '<tr> 
-                                <th scope="row"><a href="#">' .$row["nom"].'</a></th>
-                                <td>' .$row["prenom"].'</td>
-                                <td> ' .$row["email"].'</td>
+                            echo '<tr> 
+                                <th scope="row"><a href="#">' .$formateur["nom"].'</a></th>
+                                <td>' .$formateur["prenom"].'</td>
+                                <td> ' .$formateur["email"].'</td>
                                 <td>' .$tuteur.'</td>
                                 <td>
-                                    <form method="POST" enctype="multipart/form-data" action="modification_apprenant.php?id='.$row['id_user'].'">
+                                    <form method="POST" enctype="multipart/form-data" action="modification_formateur.php?id='.$formateur['id_user'].'">
                                          <input class="btn-sm btn-primary" type="submit" value="Modifier" name="" >
                                      </form>
                                 </td>
                                 <td>
-                                    <button type="button" class="btn btn-primary modalBtn" onclick= supApp("'.$row['id_user'].'") data-toggle="modal" data-target="#supmodal">
+                                    <button type="button" class="btn btn-primary modalBtn" onclick= supApp("'.$formateur['id_user'].'") data-toggle="modal" data-target="#supmodal">
                                     Supprimer
                                     </button>
                                 </td>
                                 </tr>';
                         
                         
-                      } 
+                        } 
+                    
                     }
-                      $conn->close();
-                    ?>
+                    $conn->close();
+                ?>
                     
                 </tbody>
             </table>

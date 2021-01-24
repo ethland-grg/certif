@@ -1,9 +1,9 @@
 <?php
-
+/*
 $id = $_POST['choix_promo_formateur'];
 session_start();
 $_SESSION['id_promo'] = $id;
-
+*/
 ?>
 <!DOCTYPE html>
 <html lang="fr">

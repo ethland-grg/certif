@@ -49,7 +49,7 @@
                 <p>Création compte & promos</p>
             </div>
             <div class="col d-flex align-items-center flex-column py-5">
-                <a href="admin_gestion_compte.php">
+                <a href="admin_gestion_compte_liste.php">
                     <img src="../ressources/icones/icone6.png" class=" border border-rounded" width="200px" height="200px">
                 </a>
                 <p>Gestion compte</p>

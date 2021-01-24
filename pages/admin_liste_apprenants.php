@@ -65,7 +65,7 @@
                         <th scope="col">Nom</th>
                         <th scope="col">Prénom</th>
                         <th scope="col">Adresse mail</th>
-                        <th scope="col">Tuteur</th>
+
                         <th scope="col">Modifier</th>
                         <th scope="col">Supprimer</th>
                     </tr>
@@ -73,46 +73,39 @@
                 <tbody>
                     
                     <?php 
-                    include_once '../includes/dbh.inc.php'; //accéder a la base de donnée
-                   
-                    $id = $_SESSION['id_promo'];
-                    $promo = "SELECT * FROM utilisateur_promotion WHERE id_promo= '$id';" ;
-                    $resultat = $conn->query($promo);
-                    while ($donnee = $resultat->fetch_assoc()){
-                    $user_id = $donnee['id_user'];
+                        include_once '../includes/dbh.inc.php'; //accéder a la base de donnée
                     
-                    $sql = "SELECT * FROM utilisateur WHERE id_user = '$user_id' AND role_id ='2';" ; //selectionner la base de donnée UTILISATEUR
-                    $result = $conn->query($sql); 
-                    if ($result->num_rows > 0) {
-                        // Afficher le résultat de chaque lignes
-                        $row = $result->fetch_assoc();
-                            if($row['tuteur'] == 1) { // convertir les données booléens tuteur en OUI ou NON 
-                                $tuteur = 'oui';
-                            }else{
-                                $tuteur = 'non';
-                            }
-                                //afficher les valeurs dans le tableau
-                        echo    '<tr> 
-                                <th scope="row"><a href="#">' .$row["nom"].'</a></th>
-                                <td>' .$row["prenom"].'</td>
-                                <td> ' .$row["email"].'</td>
-                                <td>' .$tuteur.'</td>
-                                <td>
-                                    <form method="POST" enctype="multipart/form-data" action="modification_apprenant.php?id='.$row['id_user'].'">
-                                         <input class="btn-sm btn-primary" type="submit" value="Modifier" name="" >
-                                     </form>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-primary modalBtn" onclick= supApp("'.$row['id_user'].'") data-toggle="modal" data-target="#supmodal">
-                                    Supprimer
-                                    </button>
-                                </td>
-                                </tr>';
+                        $apprenants = "SELECT * FROM utilisateur WHERE role_id = 2;" ;
+                        $resultat = $conn->query($apprenants);
                         
-                        
-                      } 
-                    }
-                      $conn->close();
+                        if ($resultat->num_rows > 0) {
+                            while ($apprenant = $resultat->fetch_assoc()){
+                            // Afficher le résultat de chaque lignes
+                              /*  if($apprenant['statut_tuteur'] == 1) { // convertir les données booléens tuteur en OUI ou NON 
+                                    $tuteur = 'oui';
+                                }else{
+                                    $tuteur = 'non';
+                                }*/
+                                    //afficher les valeurs dans le tableau
+                                echo    '<tr> 
+                                    <th scope="row"><a href="#">' .$apprenant["nom"].'</a></th>
+                                    <td>' .$apprenant["prenom"].'</td>
+                                    <td> ' .$apprenant["email"].'</td>
+                                    
+                                    <td>
+                                        <form method="POST" enctype="multipart/form-data" action="modification_apprenant.php?id='.$apprenant['id_user'].'">
+                                            <input class="btn-sm btn-primary" type="submit" value="Modifier" name="" >
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary modalBtn" onclick= supApp("'.$apprenant['id_user'].'") data-toggle="modal" data-target="#supmodal">
+                                        Supprimer
+                                        </button>
+                                    </td>
+                                    </tr>';
+                            } 
+                        }
+                        $conn->close();
                     ?>
                     
                 </tbody>

@@ -20,7 +20,7 @@
             header("Location: ../pages/admin_accueil.php");
         }else if($utilisateur["role_id"] == 4){ // si tuteur on atterit sur sa page d'accueil
             header("Location: ../pages/tuteur_accueil.php");
-        }else if($utilisateur["role_id"] == 2){ // si formateur on atterit sur sa page d'accueil
+        }else if($utilisateur["role_id"] == 2){ // si apprenant on atterit sur sa page d'accueil
             header("Location: ../pages/admin_accueil.php");
         }else if($utilisateur["role_id"] == 1){ // formateur on atterit sur sa page d'accueil
             header("Location: ../pages/apprenant_accueil.php");

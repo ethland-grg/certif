@@ -1,13 +1,13 @@
 <?php 
-include_once '../includes/dbh.inc.php';
+include_once '../includes/dbh.inc.php'; // entrer dans la BDD
 
 $nom = $_POST['nom'];
 $prenom = $_POST['prenom'];
 $email = $_POST['email'];
-$tuteur = $_POST['statut_tuteur'];
+//$tuteur = $_POST['statut_tuteur']; ,tuteur= '$tuteur'
 $id = $_POST['id'];
 
-$sql = "UPDATE utilisateur SET nom= '$nom',prenom='$prenom',email='$email',tuteur= '$tuteur' WHERE id_user=$id ";
+$sql = "UPDATE utilisateur SET nom= '$nom',prenom='$prenom',email='$email' WHERE id_user=$id ";
 
 if (mysqli_query($conn, $sql)) {
     header("Location: ../pages/admin_liste_apprenants.php");
@@ -16,4 +16,4 @@ if (mysqli_query($conn, $sql)) {
   }
 
   mysqli_close($conn);
-  ?>`
+  ?>
