@@ -25,7 +25,7 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <form action="../../includes/login.php" method="POST">
+                <form action="../home.php" method="POST">
                     <button class="btn btn-light btn-large rounded-pill" name="deconnexion">Se déconnecter 
                         <a class="navbar-brand" href="#">
                     <img src="../../ressources/icones/logout.png" width="25" height="25" class="" alt="">
@@ -37,7 +37,12 @@
     </header>
     <body>
     <section class="container-fluid bg-dark">
-        <h1 class="text-white text-center" style="padding:5%">Bonjour " Fongitike" mobla reglena foction manapoitra izany eto</h1>
+        <h1 class="text-white text-center" style="padding:5%">
+        <?php  // pour recuperer utilisateur et afficher les choses enregistrer avec session on peut le recuperer à tous moment avec session_start();
+        session_start();
+        echo 'Bonjour '.$_SESSION['utilisateur']['nom'];
+        ?></h1>
+        <h5> Vous êtes connecté en tant qu'apprenant</h5>
     </section>
 
     <section class="container">

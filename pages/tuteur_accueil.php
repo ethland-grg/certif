@@ -36,7 +36,12 @@
     </header>
 
     <section class="container-fluid bg-dark">
-        <h1 class="text-white text-center" style="padding:5%">Page tuteur</h1>
+    <h1 class="text-white text-center" style="padding:5%">
+        <?php  // pour recuperer utilisateur et afficher les choses enregistrer avec session on peut le recuperer à tous moment avec session_start();
+        session_start();
+        echo 'Bonjour '.$_SESSION['utilisateur']['nom'];
+        ?></h1>
+        <h5 class="text-white text-center">Vous connecté en tant que Tuteur</h5>
     </section>
 
     <section class="container">
