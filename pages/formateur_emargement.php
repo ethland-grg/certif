@@ -40,6 +40,9 @@
         <h1>
             Feuille d'émargement
         </h1>
+        <h5> à voir comment recupere ses apprenant</h5>
+        <h5> et afficher son emploi du temp</h5>
+        <h5> et activer l'émergement</h5>
 
         <p>Promotion :</p>
 

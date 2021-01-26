@@ -55,30 +55,26 @@
                 <h1>Bienvenue à votre espace</h1>
                 </div>
             </div>
-        
-        
-            <div id="choix_promo_formateur">
-                <form type="#" method="POST" action="formateur_emargement.php">
+         
+    </section>
 
-                    <div class="d-flex flex-column p-5  bg-light" id="choixPromo"> 
-                        <label for="choix_promo_formateur">Veuillez choisir une promotion :</label>
-                        <select class="form-control my-5" name="choix_promo_formateur">
-                            <!-- Récupérer les promos -->
-                            <?php include_once '../includes/dbh.inc.php'; 
-                                $sql = "SELECT * FROM promotion"; 
-                                $result = $conn->query($sql); 
-                                if ($result->num_rows > 0) {
-                            // Afficher le résultat de chaque lignes
-                            while($row = $result->fetch_assoc()){
-                                echo '<option value="'.$row['id_promo'].'">'.$row['nom'].' '.$row['promotion'].' </option>';
-                            }} ?>
-                        </select>
-                        <input type="submit" class="btn btn-primary w-50 align-self-end" value="Valider" name="valider_promo_formateur">
-                    </div>
+     <!-- à reflechir les methodes pour recuprer la liste des apprenants pour sa prmotion -->
 
-                </form>
-
+    <section class="container">
+        <div class="row row-cols-md-2 row-cols-1">
+            <div class="col d-flex align-items-center flex-column py-5">
+                <a href="formateur_accueil.php">
+                    <img src="../ressources/icones/list.png" class=" border border-rounded" width="200px" height="200px">
+                </a>
+                <p>Fiche de présence</p>
             </div>
+            <div class="col d-flex align-items-center flex-column py-5">
+                <a href="apprenant_edt.php">
+                    <img src="../ressources/icones/icone2.png" class=" border border-rounded" width="200px" height="200px">
+                </a>
+                <p>Accèder à son emploi du temps</p>
+            </div>
+        </div>
     </section>
 
 </body>
