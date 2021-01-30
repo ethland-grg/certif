@@ -23,7 +23,7 @@
         }else if($utilisateur["role_id"] == 2){ // si apprenant on atterit sur sa page d'accueil
             header("Location: ../pages/apprenant/apprenant_accueil.php");
         }else if($utilisateur["role_id"] == 1){ // formateur on atterit sur sa page d'accueil
-            header("Location: ../pages/formateur_navig.php");
+            header("Location: ../pages/choix_promo.php");
         }
     }
     

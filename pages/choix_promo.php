@@ -11,7 +11,7 @@
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.0/main.js"></script>
-    <title>Page d'accueil : Formateur</title>
+    <title>Choix promo</title>
 </head>
 
 <body>
@@ -45,6 +45,7 @@
     <section class="container-fluid d-flex flex-column justify-content-center align-items-center p-5">
         
             <div class=" container row d-flex flex-column text-center justify-content-center">
+              <div class=" container row d-flex flex-column text-center justify-content-center">
                 <div class="col">
                     <h4> <?php  // pour recuperer utilisateur et afficher les choses enregistrer avec session on peut le recuperer à tous moment avec session_start();
         session_start();
@@ -57,8 +58,11 @@
             </div>
         
         
+            
+    </section>
+    <section class="container d-flex align-items-center" >
             <div id="choix_promo_formateur">
-                <form type="#" method="POST" action="formateur_emargement.php">
+                <form type="#" method="POST" action="formateur_navig.php">
 
                     <div class="d-flex flex-column p-5  bg-light" id="choixPromo"> 
                         <label for="choix_promo_formateur">Veuillez choisir une promotion :</label>
@@ -80,7 +84,6 @@
 
             </div>
     </section>
-
 </body>
 
 </html>

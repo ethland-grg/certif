@@ -63,7 +63,7 @@
     <section class="container">
         <div class="row row-cols-md-2 row-cols-1">
             <div class="col d-flex align-items-center flex-column py-5">
-                <a href="formateur_accueil.php">
+                <a href="formateur_emargement.php">
                     <img src="../ressources/icones/list.png" class=" border border-rounded" width="200px" height="200px">
                 </a>
                 <p>Fiche de présence</p>

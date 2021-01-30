@@ -70,10 +70,10 @@ td p {
 #login{
   padding-top: 1px;
 }
-
-#connexion, #choixPromo {
+/*
+#connexion, #choixProm {
   /*justify-content: unset!important;
-  padding-top: 20%; */
+  padding-top: 20%; 
   border: 0.6px solid rgb(11, 11, 82) ;
   background-color:  #87ceeb !important;
   width: 30em;
@@ -82,7 +82,7 @@ td p {
   margin-top: 100px;
   box-shadow: 2px 5px 50px black ;
 }
-
+*/
 
 /* MEDIA QUERIES */
 @media all and (max-width: 870px) {
