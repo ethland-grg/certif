@@ -40,7 +40,7 @@
         <h1 class="text-white text-center" style="padding:">
         <?php  // pour recuperer utilisateur et afficher les choses enregistrer avec session on peut le recuperer à tous moment avec session_start();
         session_start();
-        echo 'Bonjour '.$_SESSION['utilisateur']['nom'];
+        echo 'Bonjour '.$_SESSION['utilisateur'][ 'prenom' ].' '.$_SESSION['utilisateur'][ 'nom' ];
         ?></h1>
         <h5 class="text-white text-center" style="padding:">  
         vous etes connecté en tant que d'administration</h5>

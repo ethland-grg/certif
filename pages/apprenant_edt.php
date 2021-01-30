@@ -92,7 +92,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active ml-auto" aria-current="page" href="apprenant_presence.php">Voir ses présences</a>
+                          <!--  <a class="nav-link active ml-auto" aria-current="page" href="apprenant_presence.php">Voir ses présences</a> -->
                         </li>
                     </ul>
                 </div>
@@ -102,7 +102,11 @@
 
     <section class="container-fluid h-100 text-center mt-5" id="edt_apprenant">
 
-        <h1>Bonjour "fongitike" à reglena ko ty</h1>
+        <h1><?php
+       // session_start();
+       
+        echo $_SESSION['utilisateur'][ 'prenom' ].' '.$_SESSION['utilisateur'][ 'nom' ];
+        ?></h1>
 
         <h2>Emploi du temps</h2>
 
