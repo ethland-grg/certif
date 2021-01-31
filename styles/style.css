@@ -70,19 +70,21 @@ td p {
 #login{
   padding-top: 1px;
 }
-/*
-#connexion, #choixProm {
+
+#connexion, #choix_promo_formateur {
   /*justify-content: unset!important;
-  padding-top: 20%; 
+  padding-top: 20%; */
   border: 0.6px solid rgb(11, 11, 82) ;
   background-color:  #87ceeb !important;
-  width: 30em;
+  width: 60em;
   padding-top: 1px !important;
   border-radius: 10px;
   margin-top: 100px;
   box-shadow: 2px 5px 50px black ;
+  padding-bottom: 70PX;
+  
 }
-*/
+
 
 /* MEDIA QUERIES */
 @media all and (max-width: 870px) {

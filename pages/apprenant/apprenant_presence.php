@@ -37,7 +37,7 @@
     </header>
 
     <section class="container-fluid h-100 mt-5" id="presence_apprenant">
-        <h1 class="text-white text-center" style="padding:5%">
+        <h1 class="text-white text-center" >
             <?php  
             session_start();
             echo 'Bonjour '.$_SESSION['utilisateur'][ 'prenom' ].' '.$_SESSION['utilisateur'][ 'nom' ];

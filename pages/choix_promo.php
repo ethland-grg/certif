@@ -42,17 +42,17 @@
         </nav>
     </header>
     
-    <section class="container-fluid d-flex flex-column justify-content-center align-items-center p-5">
+    <section class="container-fluid d-flex flex-column  align-items-center pt-5">
         
-            <div class=" container row d-flex flex-column text-center justify-content-center">
+            <div class=" container row d-flex flex-column text-center ">
               <div class=" container row d-flex flex-column text-center justify-content-center">
                 <div class="col">
-                    <h4> <?php  // pour recuperer utilisateur et afficher les choses enregistrer avec session on peut le recuperer à tous moment avec session_start();
-        session_start();
-        echo 'Bonjour '.$_SESSION['utilisateur']['nom'];
-        ?></h4>
+                    <h4> <?php  
+                    session_start();
+                    //echo 'Bonjour '.$_SESSION['utilisateur']['nom'].''.$_SESSION['utilisateur']['prenom'];
+                    ?></h4>
                 </div>
-                <div class="col pb-5">
+                <div class="col pb-2">
                 <h1>Bienvenue à votre espace</h1>
                 </div>
             </div>
@@ -60,13 +60,13 @@
         
             
     </section>
-    <section class="container d-flex align-items-center" >
-            <div id="choix_promo_formateur">
+    <section class="container d-flex justify-content-center w-25 pb-5 my-5" id="choix_promo_formateur">
+            <div class="contenair-fluid" id="#">
                 <form type="#" method="POST" action="formateur_navig.php">
 
-                    <div class="d-flex flex-column p-5  bg-light" id="choixPromo"> 
+                    <div class="container-fluid d-flex flex-column" id="choixPromo"> 
                         <label for="choix_promo_formateur">Veuillez choisir une promotion :</label>
-                        <select class="form-control my-5" name="choix_promo_formateur">
+                        <select class="form-control my-2" name="choix_promo_formateur">
                             <!-- Récupérer les promos -->
                             <?php include_once '../includes/dbh.inc.php'; 
                                 $sql = "SELECT * FROM promotion"; 

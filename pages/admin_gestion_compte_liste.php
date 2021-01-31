@@ -46,17 +46,23 @@ $_SESSION['id_promo'] = $id;
 
     <section class="container">
         <div class="row row-cols-md-2 row-cols-1">
-            <div class="col d-flex align-items-center flex-column py-5">
+            <div class="col-lg-4 d-flex align-items-center flex-column py-5">
                 <a href="admin_liste_apprenants.php">
-                    <img src="../ressources/icones/icone8.png" class=" border border-rounded" width="200px" height="200px">
+                    <img src="../ressources/icones/icone8.png" class=" border border-rounded" width="100px" height="100px">
                 </a>
                 <p>Liste des apprenants </p>
             </div>
-            <div class="col d-flex align-items-center flex-column py-5">
+            <div class="col-lg-4 d-flex align-items-center flex-column py-5">
                 <a href="admin_listeformateur.php">
-                    <img src="../ressources/icones/icone9.png" class=" border border-rounded" width="200px" height="200px">
+                    <img src="../ressources/icones/icone1.png" class=" border border-rounded" width="100px" height="100px">
                 </a>
                 <p>Liste formateurs</p>
+            </div>
+            <div class="col-lg-4 d-flex align-items-center flex-column py-5">
+                <a href="admin_listetuteurs.php">
+                    <img src="../ressources/icones/icone3.png" class=" border border-rounded" width="100px" height="100px">
+                </a>
+                <p>Liste Tuteur</p>
             </div>
             
         </div>
