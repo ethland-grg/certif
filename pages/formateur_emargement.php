@@ -1,3 +1,15 @@
+<?php  // mila manao requette otren'ty rehefa tsy ao anaty tableau BDD izay ilaina afichena
+    include_once '../includes/dbh.inc.php'; 
+    session_start();
+    $promoId = $_SESSION['utilisateur']["promotion_id"];
+
+    $sql = "SELECT * FROM promotion where id_promo = '$promoId'";
+                      
+    $result = $conn->query($sql); 
+    $promotion = $result->fetch_assoc();
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -40,13 +52,17 @@
         <h1>
             Feuille d'émargement
         </h1>
-        <h5> à voir comment recupere ses apprenant</h5>
-        <h5> et afficher son emploi du temp</h5>
-        <h5> et activer l'émergement</h5>
+        
 
-        <p>Promotion :</p>
+        <p>Promotion : <?php 
+               
+                echo $promotion['nom'];
+        ?> </p>
 
-        <p>Date :</p>
+        <p>Date :<?php 
+               
+               echo $promotion['promotion'];
+       ?> </p>
     </div>
 
     <section class="container text-center bg-light py-5">
@@ -61,24 +77,27 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">Doe</th>
-                        <td>John</td>
-                        <td> <input type="checkbox" value=""></td>
-                        <td><input type="checkbox" value=""></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Doe</th>
-                        <td>John</td>
-                        <td> <input type="checkbox" value=""></td>
-                        <td><input type="checkbox" value=""></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Doe</th>
-                        <td>John</td>
-                        <td> <input type="checkbox" value=""></td>
-                        <td><input type="checkbox" value=""></td>
-                    </tr>
+                    <?php 
+                        include_once '../includes/dbh.inc.php'; // methode pour recuper l'info dans la promotion
+                        $promo = $_SESSION['utilisateur']["promotion_id"];
+
+
+                        $sql = "SELECT * FROM utilisateur where promotion_id = '$promo' and role_id = 2";
+                      
+                        $result = $conn->query($sql); 
+                      
+                        if ($result->num_rows > 0) {
+                            // Afficher le résultat de chaque lignes
+                            while($row = $result->fetch_assoc()){
+                                echo ' <tr>
+                                <th scope="row">'.$row['nom'].'</th>
+                                <td>'.$row['prenom'].'</td>
+                                <td> <input type="checkbox" value=""></td>
+                                <td> <input type="checkbox" value=""></td>
+                            </tr>';
+                            }
+                        } 
+                    ?>
                 </tbody>
             </table>
             <input type="submit" class="btn btn-primary" value="Valider" name="valider_emargement">

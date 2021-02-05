@@ -1,3 +1,12 @@
+
+<?php
+    session_start();
+    $utilisateurConnecte = $_SESSION['utilisateur'];
+    if(isset($_POST["choix_promo_formateur"])){
+        $_SESSION['promo_choisi'] = (int)htmlentities($_POST["choix_promo_formateur"]);
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -47,8 +56,7 @@
             <div class=" container row d-flex flex-column text-center justify-content-center">
                 <div class="col">
                     <h4> <?php  // pour recuperer utilisateur et afficher les choses enregistrer avec session on peut le recuperer à tous moment avec session_start();
-        session_start();
-        echo 'Bonjour '.$_SESSION['utilisateur']['nom'];
+        echo 'Bonjour '.$_SESSION['utilisateur']['prenom'].$_SESSION['utilisateur']['nom'];
         ?></h4>
                 </div>
                 <div class="col pb-5">

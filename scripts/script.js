@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     events: evenements
   };
 
-  //utlisateur == "formateur" : il e reste une condition ici pour limiter que seul les formateur peut éditer
+  //utlisateur == "Administrateur" :  une condition ici pour limiter que seul les Administrateur peut éditer
  // var role_id = role_id,
   if(utilisateurConnecte && utilisateurConnecte.role_id == 3){
     calendarOptions.dateClick = function(info) {//Qunad on click sur une date du calendrier
@@ -25,6 +25,10 @@ document.addEventListener('DOMContentLoaded', function () {
       $('#dateDebut').attr("value", info.start.toJSON());// on rempli le champ hidden  correspondant à la date de début
       $('#dateFin').attr("value", info.end.toJSON());//et la date de fin
     }
+  }
+                          /* je veux affiche que sa promotion dans le calendrier */
+  if (utilisateurConnecte && utilisateurConnecte.role_id != 3) { //à remplire pour afficher calendrier de la promotion
+    
   }
 
   var calendar = new FullCalendar.Calendar(calendarEl, calendarOptions);

@@ -68,8 +68,8 @@
             </nav>
         </header>
 
-        <section class="container-fluid d-flex flex-column justify-content-center align-items-center" id="connexion">
-            <h1 class="bienvenue text-center mt-2" style="width:50%">Bienvenue</h1>
+        <section class="container-fluid d-flex flex-column w-25 justify-content-center align-items-center" id="connexion">
+            <h3 class="bienvenue text-center mt-2">Bienvenue</h3>
             <div  id="formulaire_connexion">
                 <form method="POST" action="./home.php">
 

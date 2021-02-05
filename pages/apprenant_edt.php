@@ -1,5 +1,8 @@
 <?php
     include_once '../includes/dbh.inc.php';
+    session_start();
+    $utilisateurConnecte = $_SESSION['utilisateur'];
+    $promoChoisi = $_SESSION['promo_choisi'];
 
     if(isset($_POST["addEvent"])){//Si on a clicker sur Enregistrer pour ajouter un évenement
         $promo = htmlentities($_POST['promo']);//On recupère les données du form
@@ -15,7 +18,7 @@
         }
     }
 
-    $sql = "SELECT * FROM evenements e INNER JOIN promotion p on p.id_promo = e.promotion_id" ; //sql pour récupérer les données
+    $sql = "SELECT * FROM evenements e INNER JOIN promotion p on p.id_promo = e.promotion_id and e.promotion_id = '$promoChoisi'" ; //sql pour récupérer les données
     $result = $conn->query($sql);//récupérer depuis la base de données les évenements avec les promos qui correspond pour chacun
     $evenements = [];
     if ($result->num_rows > 0) {
@@ -37,19 +40,6 @@
                 "nom" => $row["nom"]) ;
         }
     }
-
-  // je dois mettre la condition ici pour les utilisateur
-  //  $result = $conn->query($sql);
- 
-   session_start();
-    //$sql = "SELECT * FROM utilisateur WHERE id_user = '".$_SESSION['user']['id']."';" ;
-    //Si $_SESSION['user'] ne contient que l'id de l'utilisateur faire le select suivant
-   //  $sql = "SELECT * FROM utilisateur WHERE id_user = '".$_SESSION['user']."';" ;
-    
-    // $utilisateurConnecte = $result->fetch_assoc();
-
-
-   $utilisateurConnecte = $_SESSION['utilisateur'];
     $conn->close();
 ?>
 
@@ -103,7 +93,7 @@
     <section class="container-fluid h-100 text-center mt-5" id="edt_apprenant">
 
         <h1><?php
-       // session_start();
+     //  session_start();
        
         echo $_SESSION['utilisateur'][ 'prenom' ].' '.$_SESSION['utilisateur'][ 'nom' ];
         ?></h1>

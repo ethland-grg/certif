@@ -49,7 +49,7 @@
                 <div class="col">
                     <h4> <?php  
                     session_start();
-                    //echo 'Bonjour '.$_SESSION['utilisateur']['nom'].''.$_SESSION['utilisateur']['prenom'];
+                    echo 'Bonjour '.$_SESSION['utilisateur']['nom'].''.$_SESSION['utilisateur']['prenom'];
                     ?></h4>
                 </div>
                 <div class="col pb-2">

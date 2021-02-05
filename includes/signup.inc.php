@@ -16,7 +16,7 @@
       $promotion = htmlentities($_POST['promotion']);
     }
 
-    $sql = "INSERT INTO utilisateur (id_user,nom, prenom, email, mdp, role_id, statut_tuteur) VALUES (NULL,'$nom','$prenom','$email','$mdp','$role',".($statut_tuteur == null ? "NULL" : "'$statut_tuteur'").");";
+    $sql = "INSERT INTO utilisateur (id_user,nom, prenom, email, mdp, role_id, statut_tuteur,promotion_id) VALUES (NULL,'$nom','$prenom','$email','$mdp','$role',".($statut_tuteur == null ? "NULL" : "'$statut_tuteur'").",'$promotion');";
     $rec = "SELECT id_user FROM utilisateur ORDER BY id_user DESC LIMIT 1";
 
     $resulat = [];

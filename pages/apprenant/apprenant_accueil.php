@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../../styles/style.css">
 
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
@@ -51,15 +51,21 @@
             
             <div class="col d-flex align-items-center flex-column py-5">
                 <a href="../apprenant_edt.php">
-                    <img src="../../ressources/icones/icone2.png" class=" " width="200px" height="200px">
+                    <img src="../../ressources/icones/icone2.png" class=" " width="100px" height="100px">
                 </a>
                 <p> Mon emploi du temps</p>
             </div>
             <div class="col d-flex align-items-center flex-column py-5">
                 <a href="apprenant_presence.php">
-                    <img src="../../ressources/icones/icone4.png" class=" " width="200px" height="200px">
+                    <img src="../../ressources/icones/icone4.png" class=" " width="100px" height="100px">
                 </a>
                 <p>Me communiquer à mon formateur</p>
+            </div>
+            <div class="col d-flex align-items-center flex-column py-5">
+                <a href="historique_apprenant.php">
+                    <img src="../../ressources/icones/icone7.png" class=" " width="100px" height="100px">
+                </a>
+                <p>Mon historique</p>
             </div>
         </div>
     </section>
