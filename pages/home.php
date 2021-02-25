@@ -21,7 +21,7 @@
         }else if($utilisateur["role_id"] == 4){ // si tuteur on atterit sur sa page d'accueil
             header("Location: ../pages/tuteur_accueil.php");
         }else if($utilisateur["role_id"] == 2){ // si apprenant on atterit sur sa page d'accueil
-            header("Location: ../pages/apprenant/apprenant_accueil.php");
+            header("Location: ../pages/choix_promo_appr.php");
         }else if($utilisateur["role_id"] == 1){ // formateur on atterit sur sa page d'accueil
             header("Location: ../pages/choix_promo.php");
         }

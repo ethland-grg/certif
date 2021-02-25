@@ -50,7 +50,7 @@
             
             
             <div class="col d-flex align-items-center flex-column py-5">
-                <a href="../apprenant_edt.php">
+                <a href="../emploi-du-temp-apprenant.php">
                     <img src="../../ressources/icones/icone2.png" class=" " width="100px" height="100px">
                 </a>
                 <p> Mon emploi du temps</p>

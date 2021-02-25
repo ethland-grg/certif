@@ -53,7 +53,7 @@
                 <p>Accèder à sa liste d'apprenant</p>
             </div>
             <div class="col d-flex align-items-center flex-column py-5">
-                <a href="apprenant_edt.php">
+                <a href="emploi-du-temp-tuter.php">
                     <img src="../ressources/icones/icone2.png" class=" border border-rounded" width="200px" height="200px">
                 </a>
                 <p>Accèder à son emploi du temps</p>

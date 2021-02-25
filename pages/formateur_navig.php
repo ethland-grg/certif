@@ -36,7 +36,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active ml-auto" aria-current="page" href="apprenant_edt.php">Accueil</a>
+                            <a class="nav-link active ml-auto" aria-current="page" href="choix_promo.php">Accueil</a>
                         </li>
                     </ul>
                 </div>
@@ -77,7 +77,7 @@
                 <p>Fiche de présence</p>
             </div>
             <div class="col d-flex align-items-center flex-column py-5">
-                <a href="apprenant_edt.php">
+                <a href="emploi-du-temp-formateur.php">
                     <img src="../ressources/icones/icone2.png" class=" border border-rounded" width="200px" height="200px">
                 </a>
                 <p>Accèder à son emploi du temps</p>

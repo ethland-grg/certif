@@ -61,7 +61,7 @@
                 <p>Gestion compte</p>
             </div>
             <div class="col d-flex align-items-center flex-column py-5">
-                <a href="apprenant_edt.php">
+                <a href="emploi-du-temp-admnistrateur.php">
                     <img src="../ressources/icones/icone2.png" class=" border border-rounded" width="200px" height="200px">
                 </a>
                 <p>Emploi du temps</p>

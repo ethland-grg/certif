@@ -2,7 +2,7 @@
     include_once '../includes/dbh.inc.php';
     session_start();
     $utilisateurConnecte = $_SESSION['utilisateur'];
-    $promoChoisi = $_SESSION['promo_choisi'];
+   // $promoChoisi = $_SESSION['promo_choisi'];
 
     if(isset($_POST["addEvent"])){//Si on a clicker sur Enregistrer pour ajouter un évenement
         $promo = htmlentities($_POST['promo']);//On recupère les données du form
@@ -69,7 +69,7 @@
 
 <body>
 
-
+<!--
     <header>
         <nav class="navbar navbar-light navbar-expand-md">
             <div class="container d-flex">
@@ -82,14 +82,14 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                          <!--  <a class="nav-link active ml-auto" aria-current="page" href="apprenant_presence.php">Voir ses présences</a> -->
+                            <a class="nav-link active ml-auto" aria-current="page" href="apprenant_presence.php">Voir ses présences</a> 
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-
+-->
     <section class="container-fluid h-100 text-center mt-5" id="edt_apprenant">
 
         <h1><?php

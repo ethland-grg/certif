@@ -1,0 +1,1 @@
+$('.js-signature').jqSignature({width: 150, height: 150, border: '1px solid black'});
